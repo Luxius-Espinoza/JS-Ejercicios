@@ -50,9 +50,29 @@
         console.log(indexchar("hello", "l"))
         console.log(indexchar("circumlocution", "c"))
         //Ejercicio 10
-        function convarray(array1,array2){
-            
+        function convarray(array){
+            return Object.entries(array);
         }
+        console.log(convarray({ a: 1, b: 2 }))
+        //Ejercicio 11 - por terminar
+       /*  function sumpresupuesto(...obj){
+            
+        } */
+        //Ejercicio 20
+       function reemplaza_vocal(frase,vocal){
+            return frase.replace(/[aeiou]/g,vocal)
+        }
+        console.log(reemplaza_vocal('apples and bananas','u'))
+        //Ejercicio 21 - por terminar
+        /* function encuentra(frase,valor){
+            return frase.indexOf(valor);
+        }
+        console.log(encuentra("I am finding Nemo !",'Nemo')) */
+        //Ejercicio 22
+        function ultimamayuscula(palabra){
+            return `${palabra.substr(0,palabra.length -1)}${palabra.substr(palabra.length-1,1).toUpperCase()}`;
+        }
+        console.log(ultimamayuscula('hello'))
     </script>
 </body>
 </html>
