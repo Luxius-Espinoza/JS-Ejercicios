@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Ejercicio 1
+        let saludo = (nom,ape,edad) => `Mi nombre es ${nom} ${ape} y mi edad es ${edad}`;
+        console.log(saludo('sebastian','yabiku',33))
+        //Ejercicio 2
+        let sumcubos = (num1,num2,num3) => (num1**3)+(num2**3)+(num3**3);
+        console.log(sumcubos(1,5,9))
+        //Ejercicio 3
+        let type = valor => typeof(valor)
+        console.log(type(23))
+        //Ejercicio 4
+        function suma(...n){
+            return n.reduce((previous,current)=>{
+                return previous + current;
+            })
+        }
+        console.log(suma(1,2,3))
+        console.log(suma(1,2,3,4))
+        //Ejercicio 5
+        function valores(array){
+
+        }
+        //Ejercicio 6
+        function minmax(array){
+            return [Math.min(...array),Math.max(...array)];
+        }
+        console.log(minmax([1, 2, 3, 4, 5]))
+        //Ejercicio 7
+        function telefono(array){
+            return `(${array[0]}${array[1]}${array[2]}) ${array[3]}${array[4]}${array[5]}-${array[6]}${array[7]}${array[8]}${array[9]}`;
+        }
+        console.log(telefono([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]))
+        //Ejercicio 8
+        function nuevamatriz(num1,num2,num3){
+            return [Math.max(...num1),Math.max(...num2),Math.max(...num3)];
+        }
+        console.log(nuevamatriz([4, 2, 7, 1], [20, 70, 40, 90], [1, 2, 0]))
+        //Ejercicio 9
+        function indexchar(palabra,letra){
+            return [palabra.indexOf(letra),palabra.lastIndexOf(letra)];
+        }
+        console.log(indexchar("hello", "l"))
+        console.log(indexchar("circumlocution", "c"))
+        //Ejercicio 10
+        function convarray(array1,array2){
+            
+        }
+    </script>
+</body>
+</html>
