@@ -9,70 +9,178 @@
     <script>
         //Ejercicio 1
         let saludo = (nom,ape,edad) => `Mi nombre es ${nom} ${ape} y mi edad es ${edad}`;
-        console.log(saludo('sebastian','yabiku',33))
+        console.log('Ejercicio 1:',saludo('sebastian','yabiku',33))
+        
         //Ejercicio 2
         let sumcubos = (num1,num2,num3) => (num1**3)+(num2**3)+(num3**3);
-        console.log(sumcubos(1,5,9))
+        console.log('Ejercicio 2:',sumcubos(1,5,9))
+
         //Ejercicio 3
         let type = valor => typeof(valor)
-        console.log(type(23))
+        console.log('Ejercicio 3:',type(23))
+
         //Ejercicio 4
         function suma(...n){
             return n.reduce((previous,current)=>{
                 return previous + current;
             })
         }
-        console.log(suma(1,2,3))
-        console.log(suma(1,2,3,4))
+        console.log('Ejercicio 4:',suma(1,2,3))
+        console.log('Ejercicio 4:',suma(1,2,3,4))
+
         //Ejercicio 5
         function valores(array){
-
+            //let sinString = array.filter(array => typeof(array) != String)
+            let sinString =[];
+            for (let i=0;i<array.length;i++){
+                if(typeof(array[i])!='string'){
+                    sinString.push(array[i])
+                }
+            }
+            return sinString
         }
+
+        console.log('Ejercicio 5:',valores([1,'dos',3,4,'cinco']))
+
         //Ejercicio 6
         function minmax(array){
             return [Math.min(...array),Math.max(...array)];
         }
-        console.log(minmax([1, 2, 3, 4, 5]))
+        console.log('Ejercicio 6:',minmax([1, 2, 3, 4, 5]))
+
         //Ejercicio 7
         function telefono(array){
             return `(${array[0]}${array[1]}${array[2]}) ${array[3]}${array[4]}${array[5]}-${array[6]}${array[7]}${array[8]}${array[9]}`;
         }
-        console.log(telefono([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]))
+        console.log('Ejercicio 7:',telefono([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]))
+
         //Ejercicio 8
         function nuevamatriz(num1,num2,num3){
             return [Math.max(...num1),Math.max(...num2),Math.max(...num3)];
         }
-        console.log(nuevamatriz([4, 2, 7, 1], [20, 70, 40, 90], [1, 2, 0]))
+        console.log('Ejercicio 8:',nuevamatriz([4, 2, 7, 1], [20, 70, 40, 90], [1, 2, 0]))
+
         //Ejercicio 9
         function indexchar(palabra,letra){
             return [palabra.indexOf(letra),palabra.lastIndexOf(letra)];
         }
-        console.log(indexchar("hello", "l"))
-        console.log(indexchar("circumlocution", "c"))
+        console.log('Ejercicio 9:',indexchar("hello", "l"))
+        console.log('Ejercicio 9:',indexchar("circumlocution", "c"))
+
         //Ejercicio 10
         function convarray(array){
             return Object.entries(array);
         }
-        console.log(convarray({ a: 1, b: 2 }))
+        console.log('Ejercicio 10:',convarray({ a: 1, b: 2 }))
+
         //Ejercicio 11 - por terminar
-       /*  function sumpresupuesto(...obj){
-            
-        } */
+        function sumpresupuesto(obj){
+            let presupuesto =0;
+            obj.forEach(function(elemento,indice,array){
+                presupuesto=presupuesto+elemento.budget;
+            })
+            return presupuesto
+        }
+        console.log('Ejercicio 11:',sumpresupuesto([
+        { name: "John", age: 21, budget: 23000 },
+        { name: "Steve",  age: 32, budget: 40000 },
+        { name: "Martin",  age: 16, budget: 2700 }
+        ]))
+
+        //Ejercicio 12
+        function matriz_nombres(array){
+            let new_array=[];
+            for(i=0;i<array.length;i++){
+                new_array.push(array[i])
+            }
+            return new_array
+        }
+        console.log('Ejercicio 12:',matriz_nombres([
+            { name: "Steve" },
+            { name: "Mike" },
+            { name: "John" }
+            ]
+            ))
+
+        //Ejercicio 13
+        console.log('Ejercicio 13:',convarray({likes: 2,dislikes: 3,followers: 10}))
+
+        //Ejercicio 14
+        function cuadrado_num(num){
+            let total=0
+            for (i=1;i<num+1;i++){
+                total=total+(i**2)
+            }
+            return total
+        }
+        console.log('Ejercicio 14:',cuadrado_num(3))
+
+        //Ejercicio 15
+        function multiplicar_matriz(array){
+            let new_array=[];
+            for (i=0;i<array.length;i++){
+                new_array.push(array[i]*array.length)
+            }
+            return new_array
+        }
+        console.log('Ejercicio 15:',multiplicar_matriz([2, 3, 1, 0]))
+
+        //Ejercicio 16
+        function matriz_reversa(num){
+            let new_array=[];
+            for (i=num;i>-1;i--){
+                new_array.push(i)
+            }
+            return new_array
+        }
+        console.log('Ejercicio 16:',matriz_reversa(5))
+
+        //Ejercicio 17
+        function diferencia_matriz(array){
+            return Math.max(...array)-Math.min(...array)
+        }
+        console.log('Ejercicio 17:',diferencia_matriz([10, 4, 1, 4, -10, -50, 32, 21]))
+
+        //Ejercicio 18
+        function matriz_entera(array){
+            let new_array=[];
+            for (i=0;i<array.length;i++){
+                if(array[i]>=0){
+                    new_array.push(array[i]);
+                }
+            }
+            return new_array
+        }
+        console.log('Ejercicio 18:',matriz_entera([1, 2, 3, "x", "y", 10]))
+
+        //Ejercicio 19
+        function repetir_num(num,repetir){
+            let new_array=[];
+            for (i=0;i<repetir;i++){
+                new_array.push(num);
+            }
+            return new_array
+        }
+        console.log('Ejercicio 19:',repetir_num(13,5))
+
         //Ejercicio 20
        function reemplaza_vocal(frase,vocal){
             return frase.replace(/[aeiou]/g,vocal)
         }
-        console.log(reemplaza_vocal('apples and bananas','u'))
+        console.log('Ejercicio 20:',reemplaza_vocal('apples and bananas','u'))
+
         //Ejercicio 21 - por terminar
-        /* function encuentra(frase,valor){
-            return frase.indexOf(valor);
+        function encuentra(frase,valor){
+            let ubica = frase.indexOf(valor);
+            return `¡Encontre a Nemo en ${ubica}!`
         }
-        console.log(encuentra("I am finding Nemo !",'Nemo')) */
+        console.log('Ejercicio 21:',encuentra("I am finding Nemo !",'Nemo'))
+
         //Ejercicio 22
         function ultimamayuscula(palabra){
             return `${palabra.substr(0,palabra.length -1)}${palabra.substr(palabra.length-1,1).toUpperCase()}`;
         }
-        console.log(ultimamayuscula('hello'))
+        console.log('Ejercicio 22:',ultimamayuscula('hello'))
     </script>
 </body>
 </html>

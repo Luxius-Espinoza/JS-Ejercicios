@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calculator(amount){
+            this.sumar=function(x){
+                amount=amount + x
+                return this
+            }
+            
+            this.restar=function(x){
+                amount=amount - x
+                return this
+            }
+
+            this.multiplicar=function(x){
+                amount=amount * x
+                return this
+            }
+
+            this.dividir=function(x){
+                amount=amount / x
+                return this
+            }
+
+            this.total=function(cb=() => {}){
+                cb(amount);
+                return this
+            }
+        };
+
+        const calculo = new calculator(10)
+        console.log(calculo)
+
+        
+
+    </script>
+</body>
+</html>
